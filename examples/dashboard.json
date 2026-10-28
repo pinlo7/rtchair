@@ -1,0 +1,338 @@
+{
+  "title": "按摩椅",
+  "views": [
+    {
+      "title": "按摩椅",
+      "path": "main",
+      "icon": "mdi:chair-rolling",
+      "type": "sections",
+      "sections": [
+        {
+          "type": "grid",
+          "heading": "概览",
+          "cards": [
+            {
+              "type": "markdown",
+              "content": "## {{ states('sensor.rong_tai_an_mo_yi_zhuang_tai') }}\n**当前程序**：{{ states('sensor.rong_tai_an_mo_yi_dang_qian_cheng_xu') }}  \n**时长**：{{ state_attr('sensor.rong_tai_an_mo_yi_sheng_yu_shi_jian','total_minutes') }} 分钟 · **已运行**：{{ states('sensor.rong_tai_an_mo_yi_yi_yun_xing_shi_chang') }} 秒  \n**剩余**：{{ states('sensor.rong_tai_an_mo_yi_sheng_yu_shi_jian') }} 分钟"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "heading": "控制",
+          "cards": [
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_dian_yuan",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ],
+              "name": "电源"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_zan_ting",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ],
+              "name": "暂停"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_ling_zhong_li",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ],
+              "name": "零重力"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_quan_shen_qi_nang",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ],
+              "name": "全身气囊"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_yao_yi_mo_shi_mo_ni",
+              "name": "摇椅模式（模拟）",
+              "icon": "mdi:sine-wave",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "heading": "程序",
+          "cards": [
+            {
+              "type": "tile",
+              "entity": "select.rong_tai_an_mo_yi_zi_dong_cheng_xu",
+              "features": [
+                {
+                  "type": "select-options"
+                }
+              ],
+              "name": "自动程序"
+            },
+            {
+              "type": "button",
+              "entity": "button.rong_tai_an_mo_yi_yun_xing_cheng_xu_jiu_zuo_jiu_xing",
+              "name": "久坐救星 30 分钟",
+              "icon": "mdi:play-circle",
+              "show_state": false,
+              "show_name": true
+            },
+            {
+              "type": "button",
+              "entity": "button.rong_tai_an_mo_yi_yun_xing_cheng_xu_jian_jing_zhong_dian",
+              "name": "肩颈重点 20 分钟",
+              "icon": "mdi:play-circle",
+              "show_state": false,
+              "show_name": true
+            },
+            {
+              "type": "button",
+              "entity": "button.rong_tai_an_mo_yi_yun_xing_cheng_xu_shui_qian_an_shen",
+              "name": "睡前安神 20 分钟",
+              "icon": "mdi:play-circle",
+              "show_state": false,
+              "show_name": true
+            },
+            {
+              "type": "button",
+              "entity": "button.rong_tai_an_mo_yi_yun_xing_cheng_xu_kuai_su_hui_xue",
+              "name": "快速回血 10 分钟",
+              "icon": "mdi:play-circle",
+              "show_state": false,
+              "show_name": true
+            },
+            {
+              "type": "button",
+              "entity": "button.rong_tai_an_mo_yi_yun_xing_cheng_xu_yao_bu_jia_qiang",
+              "name": "腰部加强 20 分钟",
+              "icon": "mdi:play-circle",
+              "show_state": false,
+              "show_name": true
+            },
+            {
+              "type": "button",
+              "entity": "button.rong_tai_an_mo_yi_yun_xing_cheng_xu_quan_shen_shu_huan",
+              "name": "全身舒缓 30 分钟",
+              "icon": "mdi:play-circle",
+              "show_state": false,
+              "show_name": true
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "heading": "手法与部位",
+          "cards": [
+            {
+              "type": "tile",
+              "entity": "select.rong_tai_an_mo_yi_an_mo_shou_fa",
+              "features": [
+                {
+                  "type": "select-options"
+                }
+              ],
+              "name": "手法"
+            },
+            {
+              "type": "tile",
+              "entity": "select.rong_tai_an_mo_yi_ji_xin_bu_wei",
+              "features": [
+                {
+                  "type": "select-options"
+                }
+              ],
+              "name": "部位"
+            },
+            {
+              "type": "tile",
+              "entity": "select.rong_tai_an_mo_yi_an_mo_shi_chang",
+              "features": [
+                {
+                  "type": "select-options"
+                }
+              ],
+              "name": "时长"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "heading": "力度与加热",
+          "cards": [
+            {
+              "type": "tile",
+              "entity": "number.rong_tai_an_mo_yi_3d_li_du",
+              "features": [
+                {
+                  "type": "numeric-input"
+                }
+              ],
+              "name": "3D 力度"
+            },
+            {
+              "type": "tile",
+              "entity": "number.rong_tai_an_mo_yi_ji_xin_su_du",
+              "features": [
+                {
+                  "type": "numeric-input"
+                }
+              ],
+              "name": "机芯速度"
+            },
+            {
+              "type": "tile",
+              "entity": "number.rong_tai_an_mo_yi_qi_nang_li_du",
+              "features": [
+                {
+                  "type": "numeric-input"
+                }
+              ],
+              "name": "气囊力度"
+            },
+            {
+              "type": "tile",
+              "entity": "number.rong_tai_an_mo_yi_bei_bu_jia_re",
+              "features": [
+                {
+                  "type": "numeric-input"
+                }
+              ],
+              "name": "背部加热"
+            },
+            {
+              "type": "tile",
+              "entity": "number.rong_tai_an_mo_yi_xiao_tui_jia_re",
+              "features": [
+                {
+                  "type": "numeric-input"
+                }
+              ],
+              "name": "小腿加热"
+            },
+            {
+              "type": "tile",
+              "entity": "number.rong_tai_an_mo_yi_jiao_di_gun_lun",
+              "features": [
+                {
+                  "type": "numeric-input"
+                }
+              ],
+              "name": "脚底滚轮"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "heading": "摇椅模式",
+          "cards": [
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_yao_yi_mo_shi_mo_ni",
+              "name": "摇椅模式（模拟）",
+              "icon": "mdi:sine-wave",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.rong_tai_an_mo_yi_yao_yi_hou_yang_miao_shu",
+              "name": "后仰秒数",
+              "icon": "mdi:arrow-expand-vertical",
+              "features": [
+                {
+                  "type": "numeric-input"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.rong_tai_an_mo_yi_yao_yi_hui_zheng_miao_shu",
+              "name": "回正秒数",
+              "icon": "mdi:arrow-collapse-vertical",
+              "features": [
+                {
+                  "type": "numeric-input"
+                }
+              ]
+            },
+            {
+              "type": "button",
+              "entity": "button.rong_tai_an_mo_yi_tui_bu_kong_jian_zui_da",
+              "name": "腿部空间最大",
+              "icon": "mdi:human-male-height",
+              "show_state": false
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "heading": "气囊分区",
+          "cards": [
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_bi_jian_qi_nang",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ],
+              "name": "臂肩"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_bei_yao_qi_nang",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ],
+              "name": "背腰"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_tun_bu_qi_nang",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ],
+              "name": "臀部"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.rong_tai_an_mo_yi_xiao_tui_qi_nang",
+              "features": [
+                {
+                  "type": "toggle"
+                }
+              ],
+              "name": "小腿"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
