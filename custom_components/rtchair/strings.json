@@ -1,0 +1,15 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "荣泰按摩椅",
+        "description": "填写路由器上「本地假阿里云 broker」的地址（离线模式，默认即可）。",
+        "data": {"base_url": "本地 broker 地址"}
+      }
+    },
+    "error": {
+      "cannot_connect": "连不上本地 broker，请先运行 tools/offline_on.sh"
+    },
+    "abort": {"already_configured": "该 broker 已经配置过了"}
+  }
+}

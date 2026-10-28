@@ -1,0 +1,31 @@
+# 个人配置 / 凭据
+config.json
+**/config.json
+.secrets
+*.token
+
+# 抓包与证据
+*.pcap
+*.pcapng
+evidence/
+/tmp/
+
+# 逆向产物（不入库）
+apk/
+java/
+jars/
+disasm/
+shots/
+tools/dex-tools*/
+tools/archive/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 系统
+.DS_Store
+Thumbs.db

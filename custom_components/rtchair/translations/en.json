@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rotai Massage Chair",
+        "description": "Enter the address of the local fake Aliyun broker running on your router.",
+        "data": {"base_url": "Local broker URL"}
+      }
+    },
+    "error": {"cannot_connect": "Cannot reach the local broker (run tools/offline_on.sh first)"},
+    "abort": {"already_configured": "This broker is already configured"}
+  }
+}
